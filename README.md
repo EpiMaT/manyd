@@ -7,9 +7,7 @@ MATLAB library to analyze a many dimensioned function using tensored 1-D polynom
   * Github Desktop: File Menu -> Clone Repository
   * Web archive: `https://github.com/epimat/manyd` -> Green 'download' button -> Download ZIP
 * Add repo's directory to Matlab path
-
-## Uses
-First argument to every method is the # of dimensions, if needed.
+  * Our group runs `set_workspace.m` to alter default figure output and to prepare pathing
 
 ### Generate Sample Points
 Using MATLAB's packaging system, here are three equivalent ways to generate 10 points in 4 dimensions using 'improved Latin hypercube' with seed 0 [(more point generation examples)](+manyd/+gen/)
