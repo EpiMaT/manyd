@@ -20,10 +20,10 @@ switch l_samp
         rng(seed); % fix random number seed for repeatablity
         x_samp = rand(n_dim, nx_samp);
 
-    case 'grid' % generate a uniform  grid
+    case 'grid' % generate a uniform grid at midpoints
         x_samp = grid.sample(n_dim, nx_samp);
 
-    case 'edgegrid'
+    case 'edgegrid' % generate a uniform grid, includes boundary pts
         x_samp = edgegrid.sample(n_dim, nx_samp);
 
     case 'sparse'
@@ -35,10 +35,10 @@ switch l_samp
     case 'repulsefith'
         x_samp = repulse.sample(n_dim, nx_samp, seed);
 
-    case 'sobol' % sobol quasi-random number generator
+    case 'sobol'
         x_samp = sobol.sample(n_dim, nx_samp, seed);
 
-    case 'halton' % halton quasi-random number generator
+    case 'halton'
         x_samp = halton.sample(n_dim, nx_samp, seed);
 
     case 'ihs' % Beachkofski-Grandhi LHC sampling, improved by Burkhart

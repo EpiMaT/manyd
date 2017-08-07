@@ -1,4 +1,4 @@
-% Choose 'Change path', not 'Add to path' when running this first thing.
+% Choose 'Change folder', not 'Add to path' when running this first thing.
 
 %% Set the MATLAB path to the libraries in this file's path
 disp('Restoring default MATLAB path')

@@ -32,7 +32,7 @@ function value = cc_abscissa ( order, i )
 %
   if ( order < 1 )
     value = - Inf;
-  elseif ( i < 1 | order < i )
+  elseif ( i < 1 || order < i )
     value = - Inf;
   elseif ( order == 1 )
     value = 0.0;
