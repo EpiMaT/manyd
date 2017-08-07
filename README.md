@@ -10,9 +10,8 @@ MATLAB library to analyze a many dimensioned function using tensored 1-D polynom
   * Our group runs `set_workspace.m` to alter default figure output and to prepare pathing
 
 ### Generate Sample Points
-Using MATLAB's packaging system,
-here are three equivalent ways to generate 10 points in 4 dimensions
-using 'improved Latin hypercube sampler' with seed 0
+Here are three equivalent ways to generate 10 points in 4 dimensions
+using the 'improved Latin hypercube sampler' with seed 0
 
 ```matlab
 manyd.sample_gen(4,10,'ihs',0);
@@ -56,14 +55,13 @@ poly.pprint()
 
 % 0 + 0 x3 + 0 x3^2 + 0 x2 + 0 x2 x3 + 0 x2^2 + 0 x1 + 0 x1 x3 + 0 x1 x2 + 0 x1^2
 ```
-We create a design matrix, solve for the coefficients, change the polynomial and evaluate the polynomial.
+We generate points and corresponding function values, create a design matrix, solve for the coefficients, change the polynomial and evaluate the polynomial.
 
 ```matlab
-x = manyd.sample_gen(3,10,'rand'); % 10 random 2-D points
+x = manyd.sample_gen(3,10,'rand'); % 10 random 3-D points
+b = (x.^2) * [1; 2; 3]; % At those points, calc f(x1,x2,x3) = 1 x2^2 + 2 x2^2 + 3 x3^2
 A = poly.calcDesignMatrix(x);
-b = (x.^2) * [1; 2; 3]; % f(x1,x2,x3) = 1 x2^2 + 2 x2^2 + 3 x3^2
-
-poly.setCoefficients(A \ b); % solve and set
+poly.setCoefficients(A \ b); % solve and set the coeffs
 poly.pprint()
 
 % 1.1926e-14 - 2.0158e-14 x3 + 3 x3^2 - 3.9849e-15 x2 + 1.346e-14 x2 x3 + 2 x2^2 - 6.2541e-15 x1 + 2.2707e-15 x1 x3 + 5.0962e-16 x1 x2 + 1 x1^2
