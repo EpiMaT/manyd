@@ -5,7 +5,7 @@ function A = calcDesignMatrix(p, xdata, pbasis)
     exps = p.str2bas(keys(p.termMap));
 
     if ~exist('pbasis','var')
-        pbasis = calcXdata(p,xdata,p.whichFns);
+        pbasis = calcXData(p,xdata,p.whichFns);
     end
 
     nterms = p.termMap.Count;

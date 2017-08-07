@@ -4,7 +4,7 @@ function f = integral(p)
     % FIXME: do ranges other than [0,1].
     strs = keys(p.termMap);
     exps = p.str2bas(strs);
-    pbasis = p.calcIntBasis;
+    pbasis = calcIntBasis(p);
 
     nTerms = p.termMap.Count;
     f = zeros(1,1);

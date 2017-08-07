@@ -18,7 +18,7 @@ function f = eval(pin, x)
     %                 end
     %                 f = f + p.termMap(strs{i}) * term; % tack coefficient on, and add.
     % Absolute insanity below
-    basisevals = pin.calcBasisX(x);
+    basisevals = calcBasisX(pin, x);
 
     np = numel(pin);
     f = zeros(np, npts);

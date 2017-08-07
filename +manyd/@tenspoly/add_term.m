@@ -12,5 +12,5 @@ function p = add_term(p, term, coef)
     key = p.bas2str(term);
 
     p.termMap(key) = coef;
-    p.calcWhich; % FIXME slow?
+    calcWhich(p); % FIXME slow?
 end

@@ -10,5 +10,5 @@ function p = addtensorbases(p1, p2)
         end
         p.termMap(key) = p2.termMap(key) + v;
     end
-    p.calcWhich;
+    calcWhich(p);
 end

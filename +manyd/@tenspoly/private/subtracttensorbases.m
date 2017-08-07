@@ -34,6 +34,6 @@ function p = subtracttensorbases(p1, p2)
             end
             p.termMap(key) = v - p2.termMap(key);
         end
-        p.calcWhich;
+        calcWhich(p);
     end
 end % SUBRTACTTENSORBASES

@@ -11,5 +11,5 @@ function p = simplify(p, tol)
             p.termMap.remove(key);
         end
     end
-    p.calcWhich;
+    calcWhich(p);
 end

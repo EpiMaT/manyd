@@ -16,5 +16,5 @@ function basis = calcBasisX(pin, x)
     for j = 1:pin(i).ndim
         fns_union{j} =unique(fns_union{j});
     end
-    basis = calcXdata(pin,x,fns_union);
+    basis = calcXData(pin,x,fns_union);
 end

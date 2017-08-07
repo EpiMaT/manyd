@@ -10,5 +10,5 @@ function calcWhich(p)
         deg = max(deg, max(um));
     end
     p.ndeg = deg;
-    p.calcBasis;
+    calcBasis(p);
 end

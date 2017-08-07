@@ -55,5 +55,5 @@ function pder = derivative(p, idx)
         otherwise
             error('Unknown basis')
     end
-    pder.calcWhich;
+    calcWhich(pder);
 end

@@ -6,7 +6,7 @@ function p = multiplytensorbases(p1, p2)
             p = multiplylegendre(p1, p2);
     end
     p.simplify; % FIXME, slow to do both
-    p.calcWhich;
+    calcWhich(p);
 end
 
 function p = multiplymono(p1, p2)

@@ -11,5 +11,5 @@ function pout = addscalar(const, p)
     pout = tpoly(p);
     % add p1 and v
     pout.termMap(key) = const + v;
-    p.calcWhich;  % FIXME calcWhich needed, but too slow
+    calcWhich(p);  % FIXME calcWhich needed, but too slow
 end

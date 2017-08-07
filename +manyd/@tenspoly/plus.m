@@ -30,7 +30,7 @@ function p = plus(p1, p2)
    p(np) = tpoly;
    for i = 1:np
        p(i) = addscalar(const, pin(i));
-       p(i).calcWhich(); % adding a scalar adds a term. FIXME expensive
+       calcWhich(p(i)); % adding a scalar adds a term. FIXME expensive
    end
    p = reshape(p, size(pin));
 end

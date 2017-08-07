@@ -51,5 +51,5 @@ function pout = convert(p, basis)
             end
         end
     end
-    pout.calcWhich; % FIXME check if i need this
+    calcWhich(pout); % FIXME check if i need this
 end % CONVERT
