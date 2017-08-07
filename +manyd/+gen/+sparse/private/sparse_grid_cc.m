@@ -65,6 +65,7 @@ function [  grid_point ] = sparse_grid_cc ( dim_num, ...
     order_max = 2^level_max + 1;
   end
 
+  grid_point = NaN(dim_num,point_num);
   for point = 1 : point_num
     for dim = 1 : dim_num
       grid_point(dim,point) = ... 

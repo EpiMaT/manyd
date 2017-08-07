@@ -43,7 +43,8 @@ function value = index_to_level_closed ( dim_num, t, order, level_max )
   
   for dim = 1 : dim_num
 
-    s = i4_modp ( t(dim), order );
+%     s = i4_modp ( t(dim), order );
+    s = mod ( t(dim), order );
 
     if ( s == 0 )
 
