@@ -18,7 +18,7 @@ seed = p.Results.seed;
 switch l_samp
     case 'rand'
         rng(seed); % fix random number seed for repeatablity
-        x_samp = rand(n_dim, nx_samp);
+        x_samp = rand(nx_samp, n_dim);
 
     case 'grid' % generate a uniform grid at midpoints
         x_samp = grid.sample(n_dim, nx_samp);
