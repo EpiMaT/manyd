@@ -10,11 +10,13 @@ function p = multiplytensorbases(p1, p2)
 end
 
 function p = multiplymono(p1, p2)
+    import manyd.tenspoly
+
     % Multiply two monomials together
     pdef.deg = p1.ndeg + p2.ndeg;
     pdef.basis = p1.basis;
     pdef.dim = p1.ndim;
-    p = tpoly(pdef);
+    p = tenspoly(pdef);
     str1 = keys(p1.termMap);
     str2 = keys(p2.termMap);
     for i = 1:length(str1)
@@ -32,11 +34,13 @@ function p = multiplymono(p1, p2)
 end % MULTIPLYMONO
 
 function p = multiplylegendre(p1, p2)
+    import manyd.tenspoly
+
     % Multiply two Legendre basis polynomials together
     pdef.deg = p1.ndeg + p2.ndeg;
     pdef.basis = p1.basis;
     pdef.dim = p1.ndim;
-    p = tpoly(pdef);
+    p = tenspoly(pdef);
     str1 = keys(p1.termMap);
     str2 = keys(p2.termMap);
 

@@ -1,5 +1,5 @@
 function bool = eq(p1, p2)
-    assert(isa(p1,'tpoly') && isa(p2,'tpoly'), 'Both must be tpolys')
+    assert(isa(p1,'manyd.tenspoly') && isa(p2,'manyd.tenspoly'), 'Both must be tenspolys')
     bool = logical(true);
     if ~strcmpi(p1.basis,'mono')
         a = p1.convert('mono');

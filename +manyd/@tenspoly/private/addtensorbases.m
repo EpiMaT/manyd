@@ -1,6 +1,8 @@
 function p = addtensorbases(p1, p2)
+    import manyd.tenspoly
+
     % copy p1, then add everything from p2
-    p = tpoly(p1);
+    p = tenspoly(p1);
     strs = keys(p2.termMap);
     for i = 1:length(strs)
         key = strs{i};

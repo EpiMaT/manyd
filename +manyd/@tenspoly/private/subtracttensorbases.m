@@ -1,7 +1,9 @@
 function p = subtracttensorbases(p1, p2)
+    import manyd.tenspoly
+
     if isnumeric(p1) && isscalar(p1)
         % negate all coefficients of p2
-        p = tpoly(p2);
+        p = tenspoly(p2);
         exps = keys(p.termMap);
         for i = 1:length(exps)
             key = exps{i};
@@ -20,11 +22,11 @@ function p = subtracttensorbases(p1, p2)
         if p1.termMap.isKey(key)
             v = p1.termMap(key);
         end
-        p = tpoly(p1);
+        p = tenspoly(p1);
         p.termMap(key) = v - p2;
     else
         % copy p1, then subtract everything from it
-        p = tpoly(p1);
+        p = tenspoly(p1);
         strs = keys(p2.termMap);
         for k = strs
             v = 0;

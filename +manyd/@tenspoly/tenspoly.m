@@ -1,10 +1,10 @@
 classdef tenspoly < handle
-    % TPOLY  Multi-dimensional polynomial via tensoring 1-D polynomials
+    % TENSPOLY  Multi-dimensional polynomial via tensoring 1-D polynomials
     %
-    %   A tpoly object represents a tensored product of 1-D basis
+    %   A tenspoly object represents a tensored product of 1-D basis
     %   functions.  This class overrides MATLAB operators such as plus and
     %   times to allow for easy vector-wise addition and multiplication of
-    %   tpoly objects that are in the same basis.
+    %   tenspoly objects that are in the same basis.
     %
     %   This class also provides other functionality on the function
     %   such as:
@@ -20,7 +20,7 @@ classdef tenspoly < handle
         ndeg = 0        % maximum index of the basis functions
         ndim = 1        % number of dimensions/variables
     end
-    properties (Access=private)
+    properties (Access=public)
         termMap  % hashmap of string representation of term to its coefficient
         basisFns % cell array of 1d functions
         whichFns % cell array that keeps track of which bases fns are in use
@@ -37,13 +37,14 @@ classdef tenspoly < handle
                 return
             end
 
-            if isa(a, 'tenspoly')
+            if isa(a, 'manyd.tenspoly')
                 % Duplicate all data from given tenspoly object
                 p.basis    = a.basis;
                 p.basisFns = a.basisFns;
                 p.ndim     = a.ndim;
                 p.ndeg     = a.ndeg;
                 p.whichFns = a.whichFns;
+                
                 if (a.termMap.Count > 0)
                     % FIXME is there a better way to duplicate a containers.Map?
                     p.termMap = containers.Map(keys(a.termMap),values(a.termMap));
@@ -227,8 +228,8 @@ classdef tenspoly < handle
     %% Sample Methods
     methods
         function pout = duplicate(p)
-            % Use the constructor and return a duplicate of the tpoly object
-            pout = tpoly(p);
+            % Use the constructor and return a duplicate of the tenspoly object
+            pout = manyd.tenspoly(p);
         end % DUPLICATE
     end
 

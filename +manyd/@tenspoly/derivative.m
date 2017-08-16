@@ -1,5 +1,5 @@
 function pder = derivative(p, idx)
-    % Returns a new tpoly object that is the derivative in the given dimension
+    % Returns a new tenspoly object that is the derivative in the given dimension
     if exist('idx','var')
         assert(idx >= 1 && idx <= p.ndim);
     else
@@ -20,7 +20,7 @@ function pder = derivative(p, idx)
             pdef.dim = p.ndim;
             pdef.deg = expsder;
             pdef.coef = valsder;
-            pder = tpoly(pdef); % create derivative poly
+            pder = manyd.tenspoly(pdef); % create derivative poly
         case 'leg'
         case 'leg01'
             if strcmp(p.basis, 'leg01')
@@ -31,7 +31,7 @@ function pder = derivative(p, idx)
             pdef.basis = p.basis;
             pdef.deg  = p.ndeg;
             pdef.dim  = p.ndim;
-            pder = tpoly(pdef);
+            pder = manyd.tenspoly(pdef);
             nterms = p.termMap.Count;
             for i = 1:nterms
                 which = exps(i,idx);

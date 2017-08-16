@@ -1,5 +1,5 @@
 function pout = convert(p, basis)
-    % Returns new tpoly object identical to input, but in different basis
+    % Returns new tenspoly object identical to input, but in different basis
     %  Can be very slow; auto-simplifies
     %  Currently only works when converting to 'mono' from legendre
     % FIXME, clean up variable names, please
@@ -8,7 +8,7 @@ function pout = convert(p, basis)
     pdef.basis = 'mono';
     pdef.dim   = p.ndim;
     pdef.deg   = p.ndeg;
-    pout = tpoly(pdef);
+    pout = manyd.tenspoly(pdef);
     strs = keys(p.termMap);
     exps = p.str2bas(strs);
     [nterms, ndimb] = size(exps);
