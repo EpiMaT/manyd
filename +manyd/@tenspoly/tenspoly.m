@@ -20,7 +20,7 @@ classdef tenspoly < handle
         ndeg = 0        % maximum index of the basis functions
         ndim = 1        % number of dimensions/variables
     end
-    properties (Access=public)
+    properties (Access=private)
         termMap  % hashmap of string representation of term to its coefficient
         basisFns % cell array of 1d functions
         whichFns % cell array that keeps track of which bases fns are in use

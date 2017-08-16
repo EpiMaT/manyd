@@ -1,4 +1,4 @@
-function tests = tens_tenspoly
+function tests = test_tenspoly
 tests = functiontests(localfunctions);
 end
 
