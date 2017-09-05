@@ -8,7 +8,7 @@ addRequired(p,'nx_samp',@isnumeric);
 addRequired(p,'l_samp',@ischar);
 addOptional(p,'seed',0,@isnumeric);
 
-parse(p, n_dim, nx_samp, l_samp, varargin{:});
+p.parse(n_dim, nx_samp, l_samp, varargin{:});
 
 n_dim = p.Results.n_dim;
 nx_samp = p.Results.nx_samp;
@@ -29,11 +29,11 @@ switch l_samp
     case 'sparse'
         x_samp = sparse.sample(n_dim, nx_samp);
 
-    case 'fith' % fill in the holes
-        x_samp = fith.sample(n_dim, nx_samp, seed);
+%     case 'fith' % fill in the holes
+%         x_samp = fith.sample(n_dim, nx_samp, seed);
 
     case 'repulsefith'
-        x_samp = repulse.sample(n_dim, nx_samp, seed);
+        x_samp = repulsefith.sample(n_dim, nx_samp, seed);
 
     case 'sobol'
         x_samp = sobol.sample(n_dim, nx_samp, seed);
