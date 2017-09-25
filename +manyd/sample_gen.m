@@ -1,12 +1,12 @@
-function x_samp = sample_gen(n_dim, nx_samp, l_samp, varargin)
+function x_samp = sample_gen(nx_samp, n_dim, l_samp, varargin)
 import manyd.gen.*
 
 p = inputParser;
 
-addRequired(p,'n_dim',@isnumeric);
-addRequired(p,'nx_samp',@isnumeric);
-addRequired(p,'l_samp',@ischar);
-addOptional(p,'seed',0,@isnumeric);
+addRequired(p, 'nx_samp', @isnumeric);
+addRequired(p, 'n_dim', @isnumeric);
+addRequired(p, 'l_samp', @ischar);
+addOptional(p, 'seed', 0, @isnumeric);
 
 p.parse(n_dim, nx_samp, l_samp, varargin{:});
 

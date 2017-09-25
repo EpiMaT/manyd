@@ -14,13 +14,13 @@ Here are three equivalent ways to generate 10 points in 4 dimensions
 using the 'improved Latin hypercube sampler' with seed 0
 
 ```matlab
-manyd.sample_gen(4,10,'ihs',0);
+manyd.sample_gen(10,4,'ihs',0);
 
 import manyd.*
-sample_gen(4,10,'ihs',0);
+sample_gen(10,4,'ihs',0);
 
 import manyd.gen.*
-ihs.sample(4,10,0)
+ihs.sample(10,4,0)
 
 %    0.5500    0.6500    0.6500    0.1500
 %    0.4500    0.0500    0.9500    0.0500
