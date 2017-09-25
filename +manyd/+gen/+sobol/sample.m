@@ -1,4 +1,4 @@
-function x_samp = sobol(n_dim, nx_samp, seed)
+function x_samp = sample(nx_samp, n_dim, seed)
 
     if floor(log2(nx_samp))~=log2(nx_samp)
         warning('num samples really should be a power of 2')

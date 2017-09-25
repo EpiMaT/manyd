@@ -1,4 +1,4 @@
-function x_samp = sample_gen_fith_yc(nx_samp,n_dim,seed,param)
+function x_samp = sample_gen_fith_yc(nx_samp,n_dim,seed,orig_pts)
 %*****************************************************************************80
 %
 %% SAMPLE_GEN_FITH generate a quasi-uniform sample by filling in the biggest gap in each projected dimension
@@ -19,8 +19,9 @@ function x_samp = sample_gen_fith_yc(nx_samp,n_dim,seed,param)
 % as adding a few points to a latin hypercube sample.
 
 x_samp = NaN(nx_samp,n_dim);
-n = size(param,1);
-x_samp(1:n,:) = param;
+
+n = size(orig_pts,1);
+x_samp(1:n,:) = orig_pts;
 % generate a bunch of point and pick the one furthest from all the existing
 % points
 % rng(seed,'v4'); % fix random number seed for repeatablity

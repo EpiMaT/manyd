@@ -1,4 +1,4 @@
-function x_samp = sample(n_dim, nx_samp, seed)
+function x_samp = sample(nx_samp, n_dim, seed)
 
     halton_dim_num_set ( n_dim );
     step = 0;
