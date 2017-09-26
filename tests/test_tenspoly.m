@@ -2,6 +2,12 @@ function tests = test_tenspoly
 tests = functiontests(localfunctions);
 end
 
+function testInputSchemes(testCase)
+import manyd.tenspoly
+
+
+end
+
 function testFixedAddition(testCase)
 import manyd.tenspoly
 
@@ -32,7 +38,7 @@ end
 function testLegendreMult(testCase)
 import manyd.tenspoly
 % 4 dimensional legendre polys
-adef.basis = 'leg';
+adef.basis = 'leg'; 
 adef.deg = {1:2; 1; 0:1; 0};
 adef.coef = 2;
 a = tenspoly(adef);     

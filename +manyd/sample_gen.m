@@ -1,23 +1,33 @@
-function x_samp = sample_gen(nx_samp, n_dim, l_samp, varargin)
+function x_samp = sample_gen(nx_samp, varargin)
+% SAMPLE_GEN  Generates samples from Matlab's default rng, or from a
+% library of low discrepancy samplers
+%   X = SAMPLE_GEN(10, 4, 'sobol') makes ten 4-dimensional points w/ Sobol
+
 import manyd.gen.*
 
-p = inputParser;
+one_num_validator = @(x) isnumeric(x) && isscalar(x);
 
-addRequired(p, 'nx_samp', @isnumeric);
-addRequired(p, 'n_dim', @isnumeric);
-addRequired(p, 'l_samp', @ischar);
-addOptional(p, 'seed', 0, @isnumeric);
+prsr = inputParser;
 
-p.parse(nx_samp, n_dim, l_samp, varargin{:});
+addRequired(prsr, 'nx_samp', one_num_validator);
+addOptional(prsr, 'n_dim', 1, one_num_validator);
+addOptional(prsr, 'l_samp', 'rand', @ischar);
+addParameter(prsr, 'seed', NaN, one_num_validator);
+addParameter(prsr, 'orig_pts', [], @isnumeric);
 
-nx_samp = p.Results.nx_samp;
-n_dim = p.Results.n_dim;
-l_samp = p.Results.l_samp;
-seed = p.Results.seed;
+prsr.parse(nx_samp, varargin{:});
+
+nx_samp = prsr.Results.nx_samp;
+n_dim = prsr.Results.n_dim;
+l_samp = prsr.Results.l_samp;
+seed = prsr.Results.seed;
+orig_pts = prsr.Results.orig_pts;
 
 switch l_samp
     case 'rand'
-        rng(seed); % fix random number seed for repeatablity
+        if ~isnan(seed)
+            rng(seed); % fix random number seed for repeatablity
+        end
         x_samp = rand(nx_samp, n_dim);
 
     case 'grid' % generate a uniform grid at midpoints
@@ -33,18 +43,30 @@ switch l_samp
 %         x_samp = fith.sample(n_dim, nx_samp, seed);
 
     case 'repulsefith'
-        x_samp = repulsefith.sample(nx_samp, n_dim, seed);
+        x_samp = repulsefith.sample(nx_samp, n_dim, seed, orig_pts);
 
     case 'sobol'
+        if isnan(seed)
+            seed = randi(2^16-1); % 2^32 made sobol gen hang..
+        end
         x_samp = sobol.sample(nx_samp, n_dim, seed);
 
     case 'halton'
+        if isnan(seed) % if no see, we have to generate one
+            seed = randi(2^32-1);
+        end
         x_samp = halton.sample(nx_samp, n_dim, seed);
         
     case 'ihs' % Beachkofski-Grandhi LHC sampling, improved by Burkhart
+        if isnan(seed) % if no seed, we have to generate one
+            seed = randi(2^32-1);
+        end
         x_samp = ihs.sample(nx_samp, n_dim, seed);
 
     case 'niederreiter'
+        if isnan(seed)
+            seed = randi(2^16-1); % 2^32 made nieder gen fail..
+        end
         x_samp = niederreiter.sample(nx_samp, n_dim, seed);
 
     otherwise
