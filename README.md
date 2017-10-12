@@ -1,15 +1,21 @@
 # manyd
 MATLAB library to analyze a many dimensioned function using tensored 1-D polynomials.
 
-## Setup
-* Clone repo to your computer
-  * Command line: `git clone git@github.com:epimat/manyd.git`
-  * Github Desktop: File Menu -> Clone Repository
-  * Web archive: `https://github.com/epimat/manyd` -> Green 'download' button -> Download ZIP
-* Add repo's directory to Matlab path
-  * Our group runs `set_workspace.m` to alter default figure output and to prepare pathing
+### Setup
+1) Clone repo to your computer
+   * Command line: `git clone git@github.com:epimat/manyd.git`
+   * Github Desktop: File Menu -> Clone Repository
+   * Web archive: `https://github.com/epimat/manyd` -> Green 'download' button -> Download ZIP
+2) Add repo's directory to Matlab path
+   * Our group runs `set_workspace.m` to alter default figure output and to prepare pathing
 
-### Generate Sample Points
+### Dependencies / Contributions
+
+* Much help from [John Burkhart's matlab software](https://people.sc.fsu.edu/~jburkardt/)
+* Stanford's [Glmnet in Matlab](https://web.stanford.edu/~hastie/glmnet_matlab/index.html)
+
+
+## Generate Sample Points
 Here are three equivalent ways to generate 10 points in 4 dimensions
 using the 'improved Latin hypercube sampler' with seed 0
 
@@ -36,7 +42,7 @@ ihs.sample(10,4,0)
 ```
 See Also: [List of available generators](+manyd/+gen/)
 
-### Multi-dimensional tensored 1-D polynomials
+## Multi-dimensional tensored 1-D polynomials
 We first describe a polynomial of the desired dimension and total degree,
 and can print it out with its current coefficients.
 ```matlab

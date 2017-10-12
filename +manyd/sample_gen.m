@@ -1,7 +1,13 @@
 function x_samp = sample_gen(nx_samp, varargin)
 % SAMPLE_GEN  Generates samples from Matlab's default rng, or from a
 % library of low discrepancy samplers
-%   X = SAMPLE_GEN(10, 4, 'sobol') makes ten 4-dimensional points w/ Sobol
+%   import manyd.*
+%   X = sample_gen(10) returns a column row of 10 MATLAB default rand
+%   X = sample_gen(10, 2) returns 2 columns of 10 MATLAB default rand
+%   X = sample_gen(100, 4, 'niederreiter') return 10 4-D points w/ Niederreiter-Xing
+%
+%   X = sample_gen(30, 5, 'ihs', 'seed', 10) sets the seed to 10
+% See https://github.com/EpiMaT/manyd/tree/master/%2Bmanyd/%2Bgen
 
 import manyd.gen.*
 
