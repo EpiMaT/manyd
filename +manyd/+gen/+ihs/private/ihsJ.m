@@ -112,7 +112,7 @@ function [ x ] = ihsJ ( dim_num, point_num, duplication, seed )
         for i = 1 : dim_num
           dist = dist + ( point(i,k) - x(i,j) )^2;
         end
-%         dist = sqrt ( dist );
+        dist = sqrt ( dist );
         min_can = min ( min_can, dist );
       end
 
