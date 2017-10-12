@@ -1,1 +1,7 @@
+
+# Ignore OS X specific
 .DS_Store
+
+# MATLAB autosaves
+*.asv
+*.m~
