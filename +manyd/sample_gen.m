@@ -18,6 +18,8 @@ prsr = inputParser;
 addRequired(prsr, 'nx_samp', one_num_validator);
 addOptional(prsr, 'n_dim', 1, one_num_validator);
 addOptional(prsr, 'l_samp', 'rand', @ischar);
+
+%% Add New Parameters Here
 addParameter(prsr, 'seed', NaN, one_num_validator);
 addParameter(prsr, 'orig_pts', [], @isnumeric);
 
@@ -29,6 +31,7 @@ l_samp = prsr.Results.l_samp;
 seed = prsr.Results.seed;
 orig_pts = prsr.Results.orig_pts;
 
+%% Add New Case here
 switch l_samp
     case 'rand'
         if ~isnan(seed)
