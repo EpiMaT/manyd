@@ -1,5 +1,5 @@
 # manyd
-MATLAB library to analyze a many dimensioned function using tensored 1-D polynomials.
+MATLAB library to analyze a many dimensioned function using tensored 1-D polynomials and low discrepancy sequences/nets.
 
 ### Setup
 1) Clone repo to your computer
@@ -8,14 +8,16 @@ MATLAB library to analyze a many dimensioned function using tensored 1-D polynom
    * Web archive: `https://github.com/epimat/manyd` -> Green 'download' button -> Download ZIP
 2) Add repo's directory to Matlab path
    * Our group runs `set_workspace.m` to alter default figure output and to prepare pathing
+   * [](https://www.mathworks.com/help/matlab/matlab_env/add-remove-or-reorder-folders-on-the-search-path.html)
 
 ### Dependencies / Contributions
 
 * Much help from [John Burkhart's matlab software](https://people.sc.fsu.edu/~jburkardt/)
 * Stanford's [Glmnet in Matlab](https://web.stanford.edu/~hastie/glmnet_matlab/index.html)
-
+* Voronoi polyhedron volume: [](https://www.mathworks.com/matlabcentral/answers/258667-vertices-of-polygons-in-bounded-voronoi-diagram#answer_241308)
 
 ## Generate Sample Points
+
 Here are three equivalent ways to generate 10 points in 4 dimensions
 using the 'improved Latin hypercube sampler' with seed 0
 
