@@ -8,7 +8,7 @@ MATLAB library to analyze a many dimensioned function using tensored 1-D polynom
    * Web archive: `https://github.com/epimat/manyd` -> Green 'download' button -> Download ZIP
 2) Add repo's directory to Matlab path
    * Our group runs `set_workspace.m` to alter default figure output and to prepare pathing
-   * [](https://www.mathworks.com/help/matlab/matlab_env/add-remove-or-reorder-folders-on-the-search-path.html)
+   * [https://www.mathworks.com/help/matlab/matlab_env/add-remove-or-reorder-folders-on-the-search-path.html]()
 
 ### Dependencies / Contributions
 
