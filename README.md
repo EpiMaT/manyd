@@ -14,7 +14,7 @@ MATLAB library to analyze a many dimensioned function using tensored 1-D polynom
 
 * Much help from [John Burkhart's matlab software](https://people.sc.fsu.edu/~jburkardt/)
 * Stanford's [Glmnet in Matlab](https://web.stanford.edu/~hastie/glmnet_matlab/index.html)
-* Voronoi polyhedron volume: [](https://www.mathworks.com/matlabcentral/answers/258667-vertices-of-polygons-in-bounded-voronoi-diagram#answer_241308)
+* Voronoi polyhedron volume: [https://www.mathworks.com/matlabcentral/answers/258667-vertices-of-polygons-in-bounded-voronoi-diagram#answer_241308]()
 
 ## Generate Sample Points
 
